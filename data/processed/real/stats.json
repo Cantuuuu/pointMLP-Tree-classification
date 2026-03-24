@@ -1,0 +1,46 @@
+{
+  "total_processed": 767,
+  "n_points": 1024,
+  "n_classes": 8,
+  "splits": {
+    "train": {
+      "count": 613,
+      "class_distribution": {
+        "ACRU": 108,
+        "AMLA": 35,
+        "NYSY": 35,
+        "PIPA2": 152,
+        "QUAL": 82,
+        "QUCO2": 41,
+        "QULA2": 30,
+        "QURU": 130
+      }
+    },
+    "val": {
+      "count": 77,
+      "class_distribution": {
+        "ACRU": 14,
+        "AMLA": 4,
+        "NYSY": 5,
+        "PIPA2": 19,
+        "QUAL": 10,
+        "QUCO2": 5,
+        "QULA2": 4,
+        "QURU": 16
+      }
+    },
+    "test": {
+      "count": 77,
+      "class_distribution": {
+        "ACRU": 14,
+        "AMLA": 4,
+        "NYSY": 5,
+        "PIPA2": 19,
+        "QUAL": 10,
+        "QUCO2": 5,
+        "QULA2": 4,
+        "QURU": 16
+      }
+    }
+  }
+}

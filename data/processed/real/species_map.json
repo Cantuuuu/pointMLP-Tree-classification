@@ -1,0 +1,42 @@
+{
+  "ACRU": {
+    "index": 0,
+    "count": 136,
+    "scientific_name": "Acer rubrum L."
+  },
+  "AMLA": {
+    "index": 1,
+    "count": 43,
+    "scientific_name": "Amelanchier laevis Wiegand"
+  },
+  "NYSY": {
+    "index": 2,
+    "count": 45,
+    "scientific_name": "Nyssa sylvatica Marshall"
+  },
+  "PIPA2": {
+    "index": 3,
+    "count": 190,
+    "scientific_name": "Pinus palustris Mill."
+  },
+  "QUAL": {
+    "index": 4,
+    "count": 102,
+    "scientific_name": "Quercus alba L."
+  },
+  "QUCO2": {
+    "index": 5,
+    "count": 51,
+    "scientific_name": "Quercus coccinea"
+  },
+  "QULA2": {
+    "index": 6,
+    "count": 38,
+    "scientific_name": "Quercus laevis Walter"
+  },
+  "QURU": {
+    "index": 7,
+    "count": 162,
+    "scientific_name": "Quercus rubra L."
+  }
+}

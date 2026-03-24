@@ -1,0 +1,66 @@
+{
+  "experiment": "model_B_3cls",
+  "dataset": "real_3cls",
+  "checkpoint_epoch": 17,
+  "no_tta": {
+    "overall": {
+      "accuracy": 0.5324675324675324,
+      "correct": 41,
+      "total": 77,
+      "macro_precision": 0.5545977011494253,
+      "macro_recall": 0.5944644219243761,
+      "macro_f1": 0.5329311211664153
+    },
+    "per_class": {
+      "PINE": {
+        "precision": 0.5625,
+        "recall": 0.9473684210526315,
+        "f1": 0.7058823529411765,
+        "support": 19
+      },
+      "OAK": {
+        "precision": 0.6875,
+        "recall": 0.3142857142857143,
+        "f1": 0.43137254901960786,
+        "support": 35
+      },
+      "OTHER": {
+        "precision": 0.41379310344827586,
+        "recall": 0.5217391304347826,
+        "f1": 0.4615384615384615,
+        "support": 23
+      }
+    }
+  },
+  "tta": {
+    "overall": {
+      "accuracy": 0.5454545454545454,
+      "correct": 42,
+      "total": 77,
+      "macro_precision": 0.5885805422647529,
+      "macro_recall": 0.5879481311975591,
+      "macro_f1": 0.5791144527986632
+    },
+    "per_class": {
+      "PINE": {
+        "precision": 0.8421052631578947,
+        "recall": 0.8421052631578947,
+        "f1": 0.8421052631578947,
+        "support": 19
+      },
+      "OAK": {
+        "precision": 0.56,
+        "recall": 0.4,
+        "f1": 0.4666666666666667,
+        "support": 35
+      },
+      "OTHER": {
+        "precision": 0.36363636363636365,
+        "recall": 0.5217391304347826,
+        "f1": 0.42857142857142855,
+        "support": 23
+      }
+    }
+  },
+  "tta_augmentations": 5
+}

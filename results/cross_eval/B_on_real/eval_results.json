@@ -1,0 +1,105 @@
+{
+  "experiment": "model_B_3cls",
+  "dataset": "real_3cls",
+  "checkpoint_epoch": 17,
+  "no_tta": {
+    "overall": {
+      "accuracy": 0.5194805194805194,
+      "correct": 40,
+      "total": 77,
+      "macro_precision": 0.5134057971014493,
+      "macro_recall": 0.57003378010243,
+      "macro_f1": 0.5219828210080805
+    },
+    "per_class": {
+      "PINE": {
+        "precision": 0.6,
+        "recall": 0.9473684210526315,
+        "f1": 0.7346938775510204,
+        "support": 19
+      },
+      "OAK": {
+        "precision": 0.5652173913043478,
+        "recall": 0.37142857142857144,
+        "f1": 0.4482758620689655,
+        "support": 35
+      },
+      "OTHER": {
+        "precision": 0.375,
+        "recall": 0.391304347826087,
+        "f1": 0.3829787234042554,
+        "support": 23
+      }
+    }
+  },
+  "tta": {
+    "overall": {
+      "accuracy": 0.5324675324675324,
+      "correct": 41,
+      "total": 77,
+      "macro_precision": 0.5825216450216449,
+      "macro_recall": 0.5543641712978097,
+      "macro_f1": 0.5597883597883598
+    },
+    "per_class": {
+      "PINE": {
+        "precision": 0.8125,
+        "recall": 0.6842105263157895,
+        "f1": 0.742857142857143,
+        "support": 19
+      },
+      "OAK": {
+        "precision": 0.5714285714285714,
+        "recall": 0.45714285714285713,
+        "f1": 0.5079365079365079,
+        "support": 35
+      },
+      "OTHER": {
+        "precision": 0.36363636363636365,
+        "recall": 0.5217391304347826,
+        "f1": 0.42857142857142855,
+        "support": 23
+      }
+    }
+  },
+  "tta_augmentations": 10,
+  "confusion_matrix_no_tta": [
+    [
+      18,
+      0,
+      1
+    ],
+    [
+      8,
+      13,
+      14
+    ],
+    [
+      4,
+      10,
+      9
+    ]
+  ],
+  "confusion_matrix_tta": [
+    [
+      13,
+      1,
+      5
+    ],
+    [
+      3,
+      16,
+      16
+    ],
+    [
+      0,
+      11,
+      12
+    ]
+  ],
+  "class_names": [
+    "PINE",
+    "OAK",
+    "OTHER"
+  ]
+}

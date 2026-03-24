@@ -1,0 +1,61 @@
+# PointMLP Tree Classification — Default Configuration
+# Hardware: RTX 4060 (6 GB VRAM), 32 GB RAM, i5-13420H
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  num_points: 1024            # puntos por muestra (submuestreo)
+  num_classes: 3              # PINE / OAK / OTHER
+  class_names:
+    - PINE
+    - OAK
+    - OTHER
+  label_csv: null
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+model:
+  name: pointmlp
+  embedding_dim: 32
+  num_stages: 3               # reducido de 4 a 3 para menos overfitting
+  pre_blocks: 1
+  pos_blocks: 1
+  k_neighbors: 20             # balance entre contexto y velocidad
+  reducer: 4
+  stage_dims: [32, 64, 128]           # 3 stages, progresion compacta
+  stage_points: [1024, 256, 64]       # downsampling mas agresivo
+  de_dims: [128, 64, 64]
+  dropout: 0.5                # fuerte: necesario con pocos datos
+
+train:
+  epochs: 200                 # mas epochs, early stopping decide cuando parar
+  batch_size: 16              # mas grande: gradientes mas estables
+  learning_rate: 0.001        # subido, warmup lo controla
+  weight_decay: 0.05
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 10           # warmup mas largo para estabilizar inicio
+  label_smoothing: 0.1        # regularizacion contra overfitting
+  mixup: false                 # desactivado para 3 clases
+  mixup_alpha: 0.4
+  early_stopping:
+    enabled: true
+    patience: 30              # mas paciencia para encontrar mejoras tardias
+    metric: val_acc
+    mode: max
+  num_workers: 0              # Windows constraint
+  pin_memory: true
+  gradient_clip: 5.0
+
+hardware:
+  device: cuda
+  mixed_precision: true       # AMP (model deshabilita internamente donde causa NaN)
+  cudnn_benchmark: true
+
+experiment:
+  seed: 42
+  name: default
+  log_dir: results
+  save_every: 10
+  tensorboard: true

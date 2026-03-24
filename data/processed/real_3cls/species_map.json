@@ -1,0 +1,14 @@
+{
+  "PINE": {
+    "index": 0,
+    "count": 190
+  },
+  "OAK": {
+    "index": 1,
+    "count": 353
+  },
+  "OTHER": {
+    "index": 2,
+    "count": 224
+  }
+}

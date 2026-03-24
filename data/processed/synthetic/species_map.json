@@ -1,0 +1,17 @@
+{
+  "PINE": {
+    "index": 0,
+    "count": 192,
+    "scientific_name": ""
+  },
+  "OAK": {
+    "index": 1,
+    "count": 354,
+    "scientific_name": ""
+  },
+  "OTHER": {
+    "index": 2,
+    "count": 224,
+    "scientific_name": ""
+  }
+}

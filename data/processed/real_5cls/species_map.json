@@ -1,0 +1,27 @@
+{
+  "PIPA2": {
+    "index": 0,
+    "count": 190,
+    "scientific_name": "Pinus palustris Mill."
+  },
+  "QURU": {
+    "index": 1,
+    "count": 162,
+    "scientific_name": "Quercus rubra L."
+  },
+  "ACRU": {
+    "index": 2,
+    "count": 136,
+    "scientific_name": "Acer rubrum L."
+  },
+  "QUAL": {
+    "index": 3,
+    "count": 102,
+    "scientific_name": "Quercus alba L."
+  },
+  "QUCO2": {
+    "index": 4,
+    "count": 51,
+    "scientific_name": "Quercus coccinea"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "experiment": "model_B_v3",
+  "dataset": "real_5cls",
+  "checkpoint_epoch": 16,
+  "no_tta": {
+    "overall": {
+      "accuracy": 0.453125,
+      "correct": 29,
+      "total": 64,
+      "macro_precision": 0.3710227272727272,
+      "macro_recall": 0.3477255639097744,
+      "macro_f1": 0.31613082039911305
+    },
+    "per_class": {
+      "PIPA2": {
+        "precision": 0.6363636363636364,
+        "recall": 0.7368421052631579,
+        "f1": 0.6829268292682926,
+        "support": 19
+      },
+      "QURU": {
+        "precision": 0.34375,
+        "recall": 0.6875,
+        "f1": 0.4583333333333333,
+        "support": 16
+      },
+      "ACRU": {
+        "precision": 0.375,
+        "recall": 0.21428571428571427,
+        "f1": 0.2727272727272727,
+        "support": 14
+      },
+      "QUAL": {
+        "precision": 0.5,
+        "recall": 0.1,
+        "f1": 0.16666666666666669,
+        "support": 10
+      },
+      "QUCO2": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      }
+    }
+  },
+  "tta": {
+    "overall": {
+      "accuracy": 0.453125,
+      "correct": 29,
+      "total": 64,
+      "macro_precision": 0.5143010752688172,
+      "macro_recall": 0.3590037593984962,
+      "macro_f1": 0.3425043768053175
+    },
+    "per_class": {
+      "PIPA2": {
+        "precision": 0.9166666666666666,
+        "recall": 0.5789473684210527,
+        "f1": 0.7096774193548387,
+        "support": 19
+      },
+      "QURU": {
+        "precision": 0.3548387096774194,
+        "recall": 0.6875,
+        "f1": 0.4680851063829787,
+        "support": 16
+      },
+      "ACRU": {
+        "precision": 0.3,
+        "recall": 0.42857142857142855,
+        "f1": 0.3529411764705882,
+        "support": 14
+      },
+      "QUAL": {
+        "precision": 1.0,
+        "recall": 0.1,
+        "f1": 0.18181818181818182,
+        "support": 10
+      },
+      "QUCO2": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      }
+    }
+  },
+  "tta_augmentations": 15
+}

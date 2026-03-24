@@ -1,0 +1,31 @@
+{
+  "total_processed": 767,
+  "n_points": 1024,
+  "n_classes": 3,
+  "splits": {
+    "train": {
+      "count": 613,
+      "class_distribution": {
+        "PINE": 152,
+        "OAK": 283,
+        "OTHER": 178
+      }
+    },
+    "val": {
+      "count": 77,
+      "class_distribution": {
+        "PINE": 19,
+        "OAK": 35,
+        "OTHER": 23
+      }
+    },
+    "test": {
+      "count": 77,
+      "class_distribution": {
+        "PINE": 19,
+        "OAK": 35,
+        "OTHER": 23
+      }
+    }
+  }
+}

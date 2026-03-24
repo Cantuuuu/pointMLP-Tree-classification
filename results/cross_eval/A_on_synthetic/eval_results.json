@@ -1,0 +1,105 @@
+{
+  "experiment": "model_A",
+  "dataset": "synthetic",
+  "checkpoint_epoch": 29,
+  "no_tta": {
+    "overall": {
+      "accuracy": 0.987012987012987,
+      "correct": 76,
+      "total": 77,
+      "macro_precision": 0.990990990990991,
+      "macro_recall": 0.9848484848484849,
+      "macro_f1": 0.9876818519698419
+    },
+    "per_class": {
+      "PINE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 19
+      },
+      "OAK": {
+        "precision": 0.972972972972973,
+        "recall": 1.0,
+        "f1": 0.9863013698630138,
+        "support": 36
+      },
+      "OTHER": {
+        "precision": 1.0,
+        "recall": 0.9545454545454546,
+        "f1": 0.9767441860465117,
+        "support": 22
+      }
+    }
+  },
+  "tta": {
+    "overall": {
+      "accuracy": 0.987012987012987,
+      "correct": 76,
+      "total": 77,
+      "macro_precision": 0.990990990990991,
+      "macro_recall": 0.9848484848484849,
+      "macro_f1": 0.9876818519698419
+    },
+    "per_class": {
+      "PINE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 19
+      },
+      "OAK": {
+        "precision": 0.972972972972973,
+        "recall": 1.0,
+        "f1": 0.9863013698630138,
+        "support": 36
+      },
+      "OTHER": {
+        "precision": 1.0,
+        "recall": 0.9545454545454546,
+        "f1": 0.9767441860465117,
+        "support": 22
+      }
+    }
+  },
+  "tta_augmentations": 10,
+  "confusion_matrix_no_tta": [
+    [
+      19,
+      0,
+      0
+    ],
+    [
+      0,
+      36,
+      0
+    ],
+    [
+      0,
+      1,
+      21
+    ]
+  ],
+  "confusion_matrix_tta": [
+    [
+      19,
+      0,
+      0
+    ],
+    [
+      0,
+      36,
+      0
+    ],
+    [
+      0,
+      1,
+      21
+    ]
+  ],
+  "class_names": [
+    "PINE",
+    "OAK",
+    "OTHER"
+  ]
+}

@@ -1,0 +1,65 @@
+data:
+  class_names:
+  - PIPA2
+  - QURU
+  - ACRU
+  - QUAL
+  - QUCO2
+  label_csv: null
+  num_classes: 5
+  num_points: 1024
+  processed_dir: data/processed
+  raw_dir: data/raw
+  test_split: 0.1
+  train_split: 0.8
+  val_split: 0.1
+experiment:
+  log_dir: results
+  name: default
+  save_every: 10
+  seed: 42
+  tensorboard: true
+hardware:
+  cudnn_benchmark: true
+  device: cuda
+  mixed_precision: true
+model:
+  de_dims:
+  - 128
+  - 64
+  - 64
+  dropout: 0.5
+  embedding_dim: 32
+  k_neighbors: 24
+  name: pointmlp
+  num_stages: 3
+  pos_blocks: 1
+  pre_blocks: 1
+  reducer: 4
+  stage_dims:
+  - 32
+  - 64
+  - 128
+  stage_points:
+  - 1024
+  - 256
+  - 64
+train:
+  batch_size: 16
+  early_stopping:
+    enabled: true
+    metric: val_acc
+    mode: max
+    patience: 30
+  epochs: 200
+  gradient_clip: 5.0
+  label_smoothing: 0.1
+  learning_rate: 0.001
+  mixup: true
+  mixup_alpha: 0.4
+  num_workers: 0
+  optimizer: adamw
+  pin_memory: true
+  scheduler: cosine
+  warmup_epochs: 10
+  weight_decay: 0.05

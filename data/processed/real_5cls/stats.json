@@ -1,0 +1,37 @@
+{
+  "total_processed": 641,
+  "n_points": 1024,
+  "n_classes": 5,
+  "splits": {
+    "train": {
+      "count": 513,
+      "class_distribution": {
+        "PIPA2": 152,
+        "QURU": 130,
+        "ACRU": 108,
+        "QUAL": 82,
+        "QUCO2": 41
+      }
+    },
+    "val": {
+      "count": 64,
+      "class_distribution": {
+        "PIPA2": 19,
+        "QURU": 16,
+        "ACRU": 14,
+        "QUAL": 10,
+        "QUCO2": 5
+      }
+    },
+    "test": {
+      "count": 64,
+      "class_distribution": {
+        "PIPA2": 19,
+        "QURU": 16,
+        "ACRU": 14,
+        "QUAL": 10,
+        "QUCO2": 5
+      }
+    }
+  }
+}
