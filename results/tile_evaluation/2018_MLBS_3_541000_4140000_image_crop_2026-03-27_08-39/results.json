@@ -1,0 +1,28 @@
+[
+  {
+    "chm_resolution": 0.65,
+    "smooth_sigma": 0.7,
+    "local_max_window": 3,
+    "min_tree_height": 3.0,
+    "min_crown_pixels": 4,
+    "n_trees": 794,
+    "n_noise_pts": 42100,
+    "noise_frac": 0.0973,
+    "density_ha": 298.09,
+    "median_crown_m2": 17.75,
+    "mean_crown_m2": 29.82,
+    "cv_crown_area": 1.0644,
+    "min_crown_m2": 1.69,
+    "max_crown_m2": 188.86,
+    "coverage_frac": 0.9984,
+    "tp": 703,
+    "fp": 91,
+    "fn": 161,
+    "precision": 0.8854,
+    "recall": 0.8137,
+    "f1": 0.848,
+    "n_detected": 794,
+    "n_gt": 864,
+    "quality_score": 0.9241
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "tile": "2018_NIWO_2_450000_4426000_image_crop",
+  "split": "unknown",
+  "timestamp": "2026-03-27_13-34",
+  "n_gt_trees": 9730,
+  "area_ha": 10.375385570100041,
+  "match_dist_m": 8.0,
+  "seg_inference_time_s": 42.4,
+  "flujo_a_solo": {
+    "n_detected": 4226,
+    "metrics": {
+      "tp": 4214,
+      "fp": 12,
+      "fn": 5516,
+      "precision": 0.9971604353999054,
+      "recall": 0.4330935251798561,
+      "f1": 0.6038979650329608
+    },
+    "mask_quality": {
+      "n_total": 2101996,
+      "n_predicted_tree": 1493446,
+      "n_asprs_tree": 1493446,
+      "tree_ratio_pred": 0.710489458590787,
+      "tree_ratio_asprs": 0.710489458590787,
+      "mask_vs_asprs_precision": 1.0,
+      "mask_vs_asprs_recall": 1.0,
+      "mask_vs_asprs_f1": 1.0,
+      "mask_vs_asprs_iou": 1.0
+    }
+  },
+  "flujo_b_pointnet2": {
+    "n_detected": 4222,
+    "metrics": {
+      "tp": 4210,
+      "fp": 12,
+      "fn": 5520,
+      "precision": 0.9971577451444813,
+      "recall": 0.43268242548818087,
+      "f1": 0.6034977064220183
+    },
+    "mask_quality": {
+      "n_total": 2101996,
+      "n_predicted_tree": 1512292,
+      "n_asprs_tree": 1493446,
+      "tree_ratio_pred": 0.7194552225598907,
+      "tree_ratio_asprs": 0.710489458590787,
+      "mask_vs_asprs_precision": 0.9864715279853362,
+      "mask_vs_asprs_recall": 0.998919947557528,
+      "mask_vs_asprs_f1": 0.9926567119289839,
+      "mask_vs_asprs_iou": 0.985420485433366
+    }
+  }
+}

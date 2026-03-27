@@ -1,0 +1,53 @@
+{
+  "tile": "MLBS",
+  "split": "train",
+  "timestamp": "2026-03-27_13-27",
+  "n_gt_trees": 864,
+  "area_ha": 2.6636087802001875,
+  "match_dist_m": 8.0,
+  "seg_inference_time_s": 6.8,
+  "flujo_a_solo": {
+    "n_detected": 794,
+    "metrics": {
+      "tp": 703,
+      "fp": 91,
+      "fn": 161,
+      "precision": 0.8853904282115869,
+      "recall": 0.8136574074074074,
+      "f1": 0.8480096501809409
+    },
+    "mask_quality": {
+      "n_total": 522718,
+      "n_predicted_tree": 432548,
+      "n_asprs_tree": 432548,
+      "tree_ratio_pred": 0.8274978095263603,
+      "tree_ratio_asprs": 0.8274978095263603,
+      "mask_vs_asprs_precision": 1.0,
+      "mask_vs_asprs_recall": 1.0,
+      "mask_vs_asprs_f1": 1.0,
+      "mask_vs_asprs_iou": 1.0
+    }
+  },
+  "flujo_b_pointnet2": {
+    "n_detected": 794,
+    "metrics": {
+      "tp": 703,
+      "fp": 91,
+      "fn": 161,
+      "precision": 0.8853904282115869,
+      "recall": 0.8136574074074074,
+      "f1": 0.8480096501809409
+    },
+    "mask_quality": {
+      "n_total": 522718,
+      "n_predicted_tree": 437222,
+      "n_asprs_tree": 432548,
+      "tree_ratio_pred": 0.836439533362157,
+      "tree_ratio_asprs": 0.8274978095263603,
+      "mask_vs_asprs_precision": 0.9877659404147092,
+      "mask_vs_asprs_recall": 0.9984394795490905,
+      "mask_vs_asprs_f1": 0.993074031065684,
+      "mask_vs_asprs_iou": 0.9862433403288902
+    }
+  }
+}

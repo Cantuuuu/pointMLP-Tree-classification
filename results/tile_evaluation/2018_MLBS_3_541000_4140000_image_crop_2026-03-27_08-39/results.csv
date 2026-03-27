@@ -1,0 +1,2 @@
+chm_resolution,smooth_sigma,local_max_window,min_tree_height,min_crown_pixels,n_trees,n_noise_pts,noise_frac,density_ha,median_crown_m2,mean_crown_m2,cv_crown_area,min_crown_m2,max_crown_m2,coverage_frac,tp,fp,fn,precision,recall,f1,n_detected,n_gt,quality_score
+0.65,0.7,3,3.0,4,794,42100,0.0973,298.09,17.75,29.82,1.0644,1.69,188.86,0.9984,703,91,161,0.8854,0.8137,0.848,794,864,0.9241

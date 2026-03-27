@@ -1,0 +1,53 @@
+{
+  "tile": "SJER",
+  "split": "test",
+  "timestamp": "2026-03-27_13-27",
+  "n_gt_trees": 8,
+  "area_ha": 0.15998702999954573,
+  "match_dist_m": 8.0,
+  "seg_inference_time_s": 1.1,
+  "flujo_a_solo": {
+    "n_detected": 12,
+    "metrics": {
+      "tp": 8,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "mask_quality": {
+      "n_total": 42588,
+      "n_predicted_tree": 5846,
+      "n_asprs_tree": 5846,
+      "tree_ratio_pred": 0.13726871419179112,
+      "tree_ratio_asprs": 0.13726871419179112,
+      "mask_vs_asprs_precision": 1.0,
+      "mask_vs_asprs_recall": 1.0,
+      "mask_vs_asprs_f1": 1.0,
+      "mask_vs_asprs_iou": 1.0
+    }
+  },
+  "flujo_b_pointnet2": {
+    "n_detected": 12,
+    "metrics": {
+      "tp": 8,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "mask_quality": {
+      "n_total": 42588,
+      "n_predicted_tree": 5977,
+      "n_asprs_tree": 5846,
+      "tree_ratio_pred": 0.14034469803700572,
+      "tree_ratio_asprs": 0.13726871419179112,
+      "mask_vs_asprs_precision": 0.9733980257654342,
+      "mask_vs_asprs_recall": 0.9952104002736915,
+      "mask_vs_asprs_f1": 0.9841833713947391,
+      "mask_vs_asprs_iou": 0.9688592839300583
+    }
+  }
+}
