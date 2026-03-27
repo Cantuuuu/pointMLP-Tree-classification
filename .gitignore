@@ -36,5 +36,8 @@ results/*/tensorboard/
 # Processed segmentation data (too large for git, ~3.8GB)
 data/processed/segmentation/
 
+# Watershed grid search raw results (large, reproducible)
+results/watershed_grid_search/
+
 # Trained model weights (binary, large)
 results/**/*.pth
