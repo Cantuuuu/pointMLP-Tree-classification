@@ -86,11 +86,14 @@ train:
 # rasterised canopy height, not point-density valleys.
 clustering:
   method: watershed              # CHM-based watershed segmentation
-  chm_resolution: 0.5            # metres per pixel for the Canopy Height Model
-  smooth_sigma: 1.5              # Gaussian smoothing σ (pixels) — suppresses noise
+  # Optimized on 2018_MLBS_3_541000_4140000_image_crop.laz (NEON standardized tile)
+  # Grid search: F1=0.848, P=0.885, R=0.814  vs  864 GT annotated trees (324 trees/ha)
+  # Run: python evaluate_tile.py  to reproduce
+  chm_resolution: 0.65           # metres per pixel for the Canopy Height Model
+  smooth_sigma: 0.7              # Gaussian smoothing σ (pixels) — suppresses noise
   min_tree_height: 3.0           # metres — ignore canopy below this height
   min_crown_pixels: 4            # minimum crown area in pixels to keep
-  local_max_window: 5            # window size (pixels, odd) for tree-top detection
+  local_max_window: 3            # window size (pixels) for tree-top detection
 
 # Integration with classification
 classification:
