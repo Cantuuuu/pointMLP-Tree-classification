@@ -1,0 +1,29 @@
+{
+  "experiment": "exp01_baseline",
+  "notes": "config por defecto, watershed CHM",
+  "scene": "2018_MLBS_3_541000_4140000_image_crop",
+  "ground_truth_trees": 864,
+  "detected_trees": 544,
+  "difference": -320,
+  "detection_ratio": 0.6296,
+  "segmentation": {
+    "total_points": 522718,
+    "tree_points": 437525,
+    "tree_ratio": 0.837,
+    "time_seconds": 29.7,
+    "checkpoint": "results\\segmentation\\best_model.pth"
+  },
+  "clustering": {
+    "noise_points": 45166,
+    "time_seconds": 7.1,
+    "params": {
+      "method": "watershed",
+      "chm_resolution": 0.5,
+      "smooth_sigma": 1.5,
+      "min_tree_height": 3.0,
+      "min_crown_pixels": 4,
+      "local_max_window": 5
+    }
+  },
+  "config_overrides": []
+}

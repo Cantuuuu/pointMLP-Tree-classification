@@ -1,0 +1,32 @@
+{
+  "experiment": "exp04_w3_s1p2",
+  "notes": "ventana 3px + sigma 1.2",
+  "scene": "2018_MLBS_3_541000_4140000_image_crop",
+  "ground_truth_trees": 864,
+  "detected_trees": 800,
+  "difference": -64,
+  "detection_ratio": 0.9259,
+  "segmentation": {
+    "total_points": 522718,
+    "tree_points": 437148,
+    "tree_ratio": 0.8363,
+    "time_seconds": 6.3,
+    "checkpoint": "results\\segmentation\\best_model.pth"
+  },
+  "clustering": {
+    "noise_points": 45129,
+    "time_seconds": 0.6,
+    "params": {
+      "method": "watershed",
+      "chm_resolution": 0.5,
+      "smooth_sigma": 1.2,
+      "min_tree_height": 3.0,
+      "min_crown_pixels": 4,
+      "local_max_window": 3
+    }
+  },
+  "config_overrides": [
+    "clustering.local_max_window=3",
+    "clustering.smooth_sigma=1.2"
+  ]
+}

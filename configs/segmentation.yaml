@@ -1,0 +1,110 @@
+# PointNet++ Tree Segmentation — Configuration
+# Hardware: RTX 4060 (6 GB VRAM), 32 GB RAM, i5-13420H
+# Task: Binary semantic segmentation (tree vs non-tree) on LiDAR point clouds
+
+data:
+  # NeonTreeEvaluation dataset
+  neon_dir: "C:/Users/cantu/Downloads/NeonTreeEvaluation"
+  processed_dir: data/processed/segmentation
+
+  # Block extraction from tiles
+  block_size: 20.0            # meters per block side
+  block_stride: 10.0          # stride for sliding window (overlap = block_size - stride)
+  num_points: 4096            # points per block (subsampled)
+  min_points: 256             # minimum points in block to keep it
+
+  # Labels from ASPRS classification
+  tree_classes: [5]           # High Vegetation = tree
+  ground_classes: [2]         # Ground
+  ignore_classes: [7]         # Low Point / Noise — excluded
+  # Classes 1 (Unclassified) treated as non-tree
+
+  # Height normalization
+  normalize_height: true      # subtract local ground elevation per block
+
+  # Subsampling (37K blocks is too many; reduces epoch time)
+  max_train_samples: 10000     # subsample train to 10K blocks (~2.5 min/epoch)
+
+  # Splits
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+  # Sites used for train vs eval
+  train_sites: [MLBS, OSBS, SJER, TEAK, BART, HARV, JERC, NIWO, DELA, LENO, TOOL]
+  # eval crops used as additional test data
+
+model:
+  name: pointnet2_seg
+  # Encoder (Set Abstraction layers)
+  sa_npoints: [1024, 256, 64]        # num points after each SA layer
+  sa_radii: [0.5, 1.0, 2.0]          # grouping radius (meters, after normalization)
+  sa_nsamples: [32, 32, 32]           # max neighbors per group
+  sa_mlps:                            # MLP channels per SA layer
+    - [32, 32, 64]
+    - [64, 64, 128]
+    - [128, 128, 256]
+
+  # Decoder (Feature Propagation layers)
+  fp_mlps:                            # MLP channels per FP layer
+    - [256, 256]                      # FP3: from SA3 + SA2
+    - [256, 128]                      # FP2: from SA2 + SA1
+    - [128, 128]                      # FP1: from SA1 + input
+
+  # Classification head
+  seg_mlp: [128, 64]                  # final per-point MLP
+  num_classes: 2                       # tree vs non-tree
+  dropout: 0.3
+
+train:
+  epochs: 100
+  batch_size: 16               # fits in 6GB VRAM (~2GB used)
+  learning_rate: 0.001
+  weight_decay: 0.01
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 5
+
+  # Class imbalance (many tiles have mostly ground or mostly veg)
+  pos_weight: 7.0              # weight for tree class (from preprocessing: tree_ratio=0.123)
+  use_dice_loss: true          # combine BCE + Dice for better segmentation
+  dice_weight: 0.5             # weight of Dice loss in total loss
+
+  early_stopping:
+    enabled: true
+    patience: 20
+    metric: val_iou
+    mode: max
+
+  num_workers: 0               # Windows constraint
+  pin_memory: true
+  gradient_clip: 5.0
+
+# Instance clustering (post-segmentation)
+# Uses CHM-watershed: the standard Individual Tree Detection (ITD)
+# approach.  Works across any point density because it operates on
+# rasterised canopy height, not point-density valleys.
+clustering:
+  method: watershed              # CHM-based watershed segmentation
+  chm_resolution: 0.5            # metres per pixel for the Canopy Height Model
+  smooth_sigma: 1.5              # Gaussian smoothing σ (pixels) — suppresses noise
+  min_tree_height: 3.0           # metres — ignore canopy below this height
+  min_crown_pixels: 4            # minimum crown area in pixels to keep
+  local_max_window: 5            # window size (pixels, odd) for tree-top detection
+
+# Integration with classification
+classification:
+  model_path: results/model_B_3cls/best_model.pth
+  config_path: configs/default.yaml
+  num_points: 1024              # resample each instance to this
+
+hardware:
+  device: cuda
+  mixed_precision: true
+  cudnn_benchmark: true
+
+experiment:
+  seed: 42
+  name: segmentation
+  log_dir: results/segmentation
+  tensorboard: true

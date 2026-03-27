@@ -1,0 +1,24 @@
+{
+  "accuracy": 0.9537798332160213,
+  "non_tree_tp": 20276901,
+  "non_tree_fp": 325828,
+  "non_tree_fn": 901330,
+  "non_tree_precision": 0.9841852018730141,
+  "non_tree_recall": 0.9574407324200024,
+  "non_tree_f1": 0.9706287744465422,
+  "non_tree_iou": 0.9429336573155793,
+  "tree_tp": 5046213,
+  "tree_fp": 901330,
+  "tree_fn": 325828,
+  "tree_precision": 0.8484533865497064,
+  "tree_recall": 0.9393474472737643,
+  "tree_f1": 0.891589832276522,
+  "tree_iou": 0.8043861904548607,
+  "mean_iou": 0.8736599238852201,
+  "confusion_matrix": {
+    "predicted_non_tree_actual_non_tree": 20276901,
+    "predicted_tree_actual_non_tree": 901330,
+    "predicted_non_tree_actual_tree": 325828,
+    "predicted_tree_actual_tree": 5046213
+  }
+}

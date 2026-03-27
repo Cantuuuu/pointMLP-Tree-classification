@@ -32,3 +32,9 @@ desktop.ini
 
 # TensorBoard (can be regenerated)
 results/*/tensorboard/
+
+# Processed segmentation data (too large for git, ~3.8GB)
+data/processed/segmentation/
+
+# Trained model weights (binary, large)
+results/**/*.pth
