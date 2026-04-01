@@ -1,0 +1,75 @@
+{
+  "model_path": "results\\segmentation\\rf_model.pkl",
+  "n_train_blocks": 500,
+  "n_val_blocks": 150,
+  "n_train_points": 2048000,
+  "n_val_points": 614400,
+  "n_features": 15,
+  "feature_names": [
+    "z",
+    "x",
+    "y",
+    "z_rank_pct",
+    "z_above_mean",
+    "z_norm_block",
+    "dist_center",
+    "local_cnt_k16",
+    "local_mean_k16",
+    "local_max_k16",
+    "local_std_k16",
+    "local_cnt_k32",
+    "local_mean_k32",
+    "local_max_k32",
+    "local_std_k32"
+  ],
+  "hyperparams": {
+    "n_estimators": 200,
+    "max_depth": 20,
+    "min_samples_leaf": 5,
+    "class_weight": "balanced"
+  },
+  "train_stats": {
+    "fit_time_s": 382.05,
+    "n_train_points": 2048000,
+    "tree_ratio": 0.13122705078125,
+    "oob_score": 0.9898
+  },
+  "val_metrics": {
+    "accuracy": 0.9771,
+    "tree_precision": 0.8831,
+    "tree_recall": 0.9194,
+    "tree_f1": 0.9009,
+    "tree_iou": 0.8196,
+    "notree_f1": 0.987,
+    "notree_iou": 0.9744,
+    "miou": 0.897,
+    "tp": 64054,
+    "fp": 8480,
+    "fn": 5619,
+    "tn": 536247
+  },
+  "feature_importances": {
+    "z": 0.0554,
+    "x": 0.01405,
+    "y": 0.01003,
+    "z_rank_pct": 0.05691,
+    "z_above_mean": 0.0897,
+    "z_norm_block": 0.05511,
+    "dist_center": 0.00923,
+    "local_cnt_k16": 0.0,
+    "local_mean_k16": 0.02374,
+    "local_max_k16": 0.04093,
+    "local_std_k16": 0.24067,
+    "local_cnt_k32": 0.0,
+    "local_mean_k32": 0.03387,
+    "local_max_k32": 0.07042,
+    "local_std_k32": 0.29995
+  },
+  "timing": {
+    "feat_extraction_train_s": 10.57,
+    "feat_extraction_val_s": 2.98,
+    "training_s": 382.06,
+    "inference_val_s": 1.966
+  },
+  "model_size_mb": 427.41
+}

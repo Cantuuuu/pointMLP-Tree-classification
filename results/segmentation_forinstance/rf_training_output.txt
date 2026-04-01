@@ -1,0 +1,105 @@
+=================================================================
+  Random Forest — FORinstance TLS Segmentation
+=================================================================
+  n_estimators : 200
+  max_depth    : 20
+  Train pts/block (RF): 1024  (PointNet++: 4096 — mismo conjunto de bloques)
+  Val/test pts/block  : 4096  (idéntico a PointNet++)
+
+[1/4] Cargando datos...
+  Bloques — train:2902  val:511  test:1484  (0.2s)
+  Submuestra train: 1024 pts/bloque = 2.97M pts totales
+
+[2/4] Extrayendo features (15 por punto)...
+  Features: bloque 100/2902
+  Features: bloque 200/2902
+  Features: bloque 300/2902
+  Features: bloque 400/2902
+  Features: bloque 500/2902
+  Features: bloque 600/2902
+  Features: bloque 700/2902
+  Features: bloque 800/2902
+  Features: bloque 900/2902
+  Features: bloque 1000/2902
+  Features: bloque 1100/2902
+  Features: bloque 1200/2902
+  Features: bloque 1300/2902
+  Features: bloque 1400/2902
+  Features: bloque 1500/2902
+  Features: bloque 1600/2902
+  Features: bloque 1700/2902
+  Features: bloque 1800/2902
+  Features: bloque 1900/2902
+  Features: bloque 2000/2902
+  Features: bloque 2100/2902
+  Features: bloque 2200/2902
+  Features: bloque 2300/2902
+  Features: bloque 2400/2902
+  Features: bloque 2500/2902
+  Features: bloque 2600/2902
+  Features: bloque 2700/2902
+  Features: bloque 2800/2902
+  Features: bloque 2900/2902
+  Train: (2971648, 15)  →  14.2s
+  Val:   (2093056, 15)  →  10.0s
+
+[3/4] Entrenando Random Forest (warm_start, lotes de 20)...
+  Lote  1/10  [ 20/200 árboles]  t=62.9s  total=63s  ETA≈567s  OOB=0.9839
+  Lote  2/10  [ 40/200 árboles]  t=69.7s  total=133s  ETA≈530s  OOB=0.9843
+  Lote  3/10  [ 60/200 árboles]  t=77.0s  total=210s  ETA≈489s  OOB=0.9844
+  Lote  4/10  [ 80/200 árboles]  t=83.6s  total=293s  ETA≈440s  OOB=0.9845
+  Lote  5/10  [100/200 árboles]  t=91.4s  total=385s  ETA≈385s  OOB=0.9845
+  Lote  6/10  [120/200 árboles]  t=99.2s  total=484s  ETA≈323s  OOB=0.9845
+  Lote  7/10  [140/200 árboles]  t=107.5s  total=591s  ETA≈253s  OOB=0.9846
+  Lote  8/10  [160/200 árboles]  t=113.9s  total=705s  ETA≈176s  OOB=0.9846
+  Lote  9/10  [180/200 árboles]  t=122.5s  total=828s  ETA≈92s  OOB=0.9846
+  Lote 10/10  [200/200 árboles]  t=127.5s  total=955s  ETA≈0s  OOB=0.9846
+
+  Entrenamiento completo: 955.2s  OOB=0.9846
+
+[4/4] Evaluando...
+
+  === Validación ===
+  mIoU=0.9538  tree_IoU=0.9475  F1=0.9731  Prec=0.9609  Rec=0.9855  (7.0s)
+  Extrayendo features test...
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:611: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable OOB estimates.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+C:\Users\cantu\AppData\Roaming\Python\Python313\site-packages\sklearn\ensemble\_forest.py:860: UserWarning: class_weight presets "balanced" or "balanced_subsample" are not recommended for warm_start if the fitted data differs from the full dataset. In order to use "balanced" weights, use compute_class_weight ("balanced", classes, y). In place of y you can use a large enough sample of the full training set target to properly estimate the class frequency distributions. Pass the resulting weights as the class_weight parameter.
+  warn(
+  Test features: (6078464, 15)  (29.2s)
+
+  === Test ===
+  mIoU=0.9188  tree_IoU=0.9110  F1=0.9534  Prec=0.9217  Rec=0.9874  (19.9s)
+
+  Feature importances (top 5):
+    z                      0.2158  ######################################################################################
+    z_norm_block           0.1947  #############################################################################
+    local_std_k32          0.1697  ###################################################################
+    local_std_k16          0.1291  ###################################################
+    z_above_mean           0.0690  ###########################
+
+=================================================================
+  Modelo guardado: results\segmentation_forinstance\rf_model.pkl (540 MB)
+  Stats:           results\segmentation_forinstance\rf_train_stats.json
+  OOB accuracy:    0.9846
+  Val  mIoU:       0.9538  tree_IoU=0.9475
+  Test mIoU:       0.9188  tree_IoU=0.9110
+=================================================================

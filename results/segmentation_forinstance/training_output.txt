@@ -1,0 +1,80 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\cantu\OneDrive\Escritorio\Dev\pointmlp-trees\src\segmentation\train.py", line 421, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\cantu\OneDrive\Escritorio\Dev\pointmlp-trees\src\segmentation\train.py", line 322, in main
+    train_metrics = train_one_epoch(
+        model, loaders["train"], criterion, optimizer, device, grad_clip)
+  File "C:\Users\cantu\OneDrive\Escritorio\Dev\pointmlp-trees\src\segmentation\train.py", line 169, in train_one_epoch
+    points = points.to(device)
+torch.AcceleratorError: CUDA error: unknown error
+Search for `cudaErrorUnknown' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Device: cuda
+
+Loading data...
+  train: 2902 blocks, tree ratio: 0.457
+  val: 511 blocks, tree ratio: 0.425
+  test: 1484 blocks, tree ratio: 0.434
+
+Building model...
+PointNet++ Segmentation: 784,866 parameters
+
+Training for up to 80 epochs...
+  Batch size: 16
+  LR: 0.001
+  Pos weight: 1.19
+  Dice loss: True (weight=0.5)
+  Early stopping: patience=20 on val_iou
+
+Epoch   1/80 | lr=0.000200 | train_loss=0.3002 acc=0.9272 iou=0.8633 | val_loss=0.1670 acc=0.9603 iou=0.9217 tree_iou=0.9093 | 49.0s
+  >> New best val_iou: 0.9217
+Epoch   2/80 | lr=0.000400 | train_loss=0.1430 acc=0.9687 iou=0.9389 | val_loss=0.0900 acc=0.9786 iou=0.9572 tree_iou=0.9512 | 45.1s
+  >> New best val_iou: 0.9572
+Epoch   3/80 | lr=0.000600 | train_loss=0.1088 acc=0.9761 iou=0.9530 | val_loss=0.0793 acc=0.9805 iou=0.9610 tree_iou=0.9556 | 35.8s
+  >> New best val_iou: 0.9610
+Epoch   4/80 | lr=0.000800 | train_loss=0.1092 acc=0.9759 iou=0.9526 | val_loss=0.1891 acc=0.9546 iou=0.9110 tree_iou=0.8972 | 35.9s
+Epoch   5/80 | lr=0.001000 | train_loss=0.1040 acc=0.9763 iou=0.9534 | val_loss=0.0971 acc=0.9825 iou=0.9649 tree_iou=0.9600 | 36.1s
+  >> New best val_iou: 0.9649
+Epoch   6/80 | lr=0.001000 | train_loss=0.0947 acc=0.9790 iou=0.9585 | val_loss=0.0961 acc=0.9780 iou=0.9562 tree_iou=0.9505 | 36.0s
+Epoch   7/80 | lr=0.001000 | train_loss=0.0817 acc=0.9821 iou=0.9646 | val_loss=0.0663 acc=0.9819 iou=0.9637 tree_iou=0.9587 | 36.2s
+Epoch   8/80 | lr=0.000998 | train_loss=0.0793 acc=0.9825 iou=0.9653 | val_loss=0.0731 acc=0.9820 iou=0.9639 tree_iou=0.9590 | 36.0s
+Epoch   9/80 | lr=0.000996 | train_loss=0.0690 acc=0.9829 iou=0.9662 | val_loss=0.0911 acc=0.9787 iou=0.9575 tree_iou=0.9519 | 36.0s
+Epoch  10/80 | lr=0.000993 | train_loss=0.0601 acc=0.9864 iou=0.9730 | val_loss=0.0482 acc=0.9860 iou=0.9718 tree_iou=0.9679 | 35.9s
+  >> New best val_iou: 0.9718
+Epoch  11/80 | lr=0.000989 | train_loss=0.0663 acc=0.9849 iou=0.9700 | val_loss=0.1018 acc=0.9771 iou=0.9545 tree_iou=0.9486 | 36.1s
+Epoch  12/80 | lr=0.000984 | train_loss=0.0682 acc=0.9850 iou=0.9703 | val_loss=0.1161 acc=0.9679 iou=0.9362 tree_iou=0.9261 | 35.8s
+Epoch  13/80 | lr=0.000979 | train_loss=0.0800 acc=0.9818 iou=0.9641 | val_loss=0.0917 acc=0.9796 iou=0.9593 tree_iou=0.9540 | 36.0s
+Epoch  14/80 | lr=0.000972 | train_loss=0.0623 acc=0.9863 iou=0.9727 | val_loss=0.0693 acc=0.9819 iou=0.9639 tree_iou=0.9589 | 36.1s
+Epoch  15/80 | lr=0.000965 | train_loss=0.0600 acc=0.9864 iou=0.9730 | val_loss=0.0567 acc=0.9838 iou=0.9675 tree_iou=0.9629 | 36.1s
+Epoch  16/80 | lr=0.000957 | train_loss=0.0688 acc=0.9847 iou=0.9697 | val_loss=0.0730 acc=0.9823 iou=0.9646 tree_iou=0.9598 | 36.0s
+Epoch  17/80 | lr=0.000948 | train_loss=0.0675 acc=0.9854 iou=0.9710 | val_loss=0.0885 acc=0.9793 iou=0.9587 tree_iou=0.9531 | 36.0s
+Epoch  18/80 | lr=0.000938 | train_loss=0.0621 acc=0.9866 iou=0.9734 | val_loss=0.0513 acc=0.9868 iou=0.9733 tree_iou=0.9696 | 36.0s
+  >> New best val_iou: 0.9733
+Epoch  19/80 | lr=0.000928 | train_loss=0.0550 acc=0.9876 iou=0.9754 | val_loss=0.0646 acc=0.9824 iou=0.9647 tree_iou=0.9599 | 36.0s
+Epoch  20/80 | lr=0.000917 | train_loss=0.0609 acc=0.9865 iou=0.9732 | val_loss=0.0828 acc=0.9810 iou=0.9620 tree_iou=0.9570 | 36.0s
+Epoch  21/80 | lr=0.000905 | train_loss=0.0562 acc=0.9871 iou=0.9743 | val_loss=0.0562 acc=0.9871 iou=0.9740 tree_iou=0.9703 | 35.9s
+  >> New best val_iou: 0.9740
+Epoch  22/80 | lr=0.000892 | train_loss=0.0568 acc=0.9872 iou=0.9747 | val_loss=0.0722 acc=0.9822 iou=0.9643 tree_iou=0.9595 | 35.9s
+Epoch  23/80 | lr=0.000879 | train_loss=0.0616 acc=0.9865 iou=0.9733 | val_loss=0.1316 acc=0.9678 iou=0.9366 tree_iou=0.9290 | 36.0s
+Epoch  24/80 | lr=0.000865 | train_loss=0.0587 acc=0.9874 iou=0.9750 | val_loss=0.0679 acc=0.9843 iou=0.9685 tree_iou=0.9642 | 35.9s
+Epoch  25/80 | lr=0.000850 | train_loss=0.0534 acc=0.9878 iou=0.9758 | val_loss=0.0587 acc=0.9858 iou=0.9714 tree_iou=0.9675 | 35.9s
+Epoch  26/80 | lr=0.000835 | train_loss=0.0636 acc=0.9855 iou=0.9713 | val_loss=0.4276 acc=0.9118 iou=0.8309 tree_iou=0.7966 | 36.0s
+Epoch  27/80 | lr=0.000819 | train_loss=0.0671 acc=0.9843 iou=0.9689 | val_loss=0.0583 acc=0.9854 iou=0.9706 tree_iou=0.9665 | 35.9s
+Epoch  28/80 | lr=0.000802 | train_loss=0.0533 acc=0.9871 iou=0.9743 | val_loss=0.0648 acc=0.9810 iou=0.9620 tree_iou=0.9568 | 35.8s
+Epoch  29/80 | lr=0.000786 | train_loss=0.0568 acc=0.9866 iou=0.9734 | val_loss=0.0822 acc=0.9813 iou=0.9627 tree_iou=0.9577 | 35.9s
+Epoch  30/80 | lr=0.000768 | train_loss=0.0592 acc=0.9866 iou=0.9734 | val_loss=0.0678 acc=0.9829 iou=0.9658 tree_iou=0.9612 | 35.9s
+Epoch  31/80 | lr=0.000750 | train_loss=0.0507 acc=0.9884 iou=0.9770 | val_loss=0.0636 acc=0.9829 iou=0.9657 tree_iou=0.9611 | 35.9s
+Epoch  32/80 | lr=0.000732 | train_loss=0.0537 acc=0.9879 iou=0.9759 | val_loss=0.0699 acc=0.9822 iou=0.9645 tree_iou=0.9597 | 35.8s
+Epoch  33/80 | lr=0.000713 | train_loss=0.0479 acc=0.9889 iou=0.9778 | val_loss=0.0613 acc=0.9847 iou=0.9692 tree_iou=0.9650 | 35.8s
+Epoch  34/80 | lr=0.000694 | train_loss=0.0592 acc=0.9867 iou=0.9735 | val_loss=0.0843 acc=0.9829 iou=0.9658 tree_iou=0.9611 | 35.8s
+Epoch  35/80 | lr=0.000675 | train_loss=0.0518 acc=0.9882 iou=0.9765 | val_loss=0.0642 acc=0.9833 iou=0.9665 tree_iou=0.9619 | 35.8s
+Epoch  36/80 | lr=0.000655 | train_loss=0.0450 acc=0.9890 iou=0.9781 | val_loss=0.0585 acc=0.9858 iou=0.9714 tree_iou=0.9675 | 35.9s
+Epoch  37/80 | lr=0.000635 | train_loss=0.0510 acc=0.9878 iou=0.9758 | val_loss=0.0469 acc=0.9874 iou=0.9746 tree_iou=0.9711 | 35.9s
+  >> New best val_iou: 0.9746
+Epoch  38/80 | lr=0.000615 | train_loss=0.0429 acc=0.9901 iou=0.9803 | val_loss=0.0774 acc=0.9798 iou=0.9597 tree_iou=0.9544 | 35.8s

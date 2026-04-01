@@ -1,0 +1,114 @@
+# PointNet++ / RF Tree Segmentation — FORinstance TLS Dataset
+# Hardware: RTX 4060 (6 GB VRAM), Windows 11, num_workers=0
+# Task: Binary semantic segmentation (tree vs non-tree) on TLS point clouds
+# Comparison: 3 flows (Geometric / PointNet++ / Random Forest) -> DBSCAN ITD
+
+data:
+  forinstance_dir: "data/FORinstance_dataset"
+  processed_dir:   "data/processed/segmentation_forinstance"
+
+  # Block extraction (TLS plots are 25–90 m wide, density ~1000–6000 pts/m²)
+  block_size:   5.0          # metres — captures 1–3 trees with crown context
+  block_stride: 2.5          # 50% overlap -> denser sampling, more blocks
+  num_points:   4096         # points per block after subsampling
+  min_points:   256          # discard near-empty border blocks
+
+  # Label definition (derived from treeID, NOT from semantic class field)
+  #   tree     = (treeID > 0)            -> label 1
+  #   non-tree = (treeID == 0 AND class != 3)  -> label 0
+  #   excluded = class 3 (Out-points)   -> removed before block extraction
+  #
+  # Flow A (geometric) uses NONE of these labels during inference.
+
+  # Splits come from the official data_split_metadata.csv:
+  #   dev  -> train  (further split 85/15 train/val in preprocess script)
+  #   test -> test   (strictly held out; use sparingly)
+  val_fraction: 0.15         # fraction of dev blocks reserved for validation
+
+model:
+  name: pointnet2_seg
+  # Same architecture as NEON pipeline (no CUDA extensions required)
+  sa_npoints:  [1024, 256, 64]
+  sa_radii:    [0.2,  0.5,  1.0]   # TLS blocks 5m wide, normalised -> radii in [-1,1]
+  sa_nsamples: [32,   32,   32]
+  sa_mlps:
+    - [32,  32,  64]
+    - [64,  64,  128]
+    - [128, 128, 256]
+  fp_mlps:
+    - [256, 256]
+    - [256, 128]
+    - [128, 128]
+  seg_mlp:     [128, 64]
+  num_classes: 2
+  dropout:     0.3
+
+train:
+  epochs:        80
+  batch_size:    16
+  learning_rate: 0.001
+  weight_decay:  0.01
+  optimizer:     adamw
+  scheduler:     cosine
+  warmup_epochs: 5
+
+  # From preprocessing stats.json: tree_ratio=0.457 → pos_weight=1.19
+  pos_weight:    1.19
+  use_dice_loss: true
+  dice_weight:   0.5
+
+  early_stopping:
+    enabled: true
+    patience: 20
+    metric:   val_iou
+    mode:     max
+
+  num_workers: 0              # Windows constraint
+  pin_memory:  true
+  gradient_clip: 5.0
+
+# ITD: Individual Tree Detection via 3D DBSCAN clustering
+# Applied identically to all three flows (fair comparison).
+# Parameters tuned on dev splits only.
+clustering:
+  method:     raster_zmax     # Z-max raster + Gaussian smoothing + 2D local maxima
+                              # Analog of CHM-watershed (ALS) adapted for TLS.
+                              # DBSCAN discarded: crowns merge into single clusters.
+  # Raster Z-max ITD parameters (tuned on dev plots)
+  cell_size:        0.5       # metres — Z-raster resolution (standard TLS ITD)
+  smooth_sigma:     1.5       # Gaussian smoothing (cells) — removes branch false maxima
+  local_max_window: 5         # local-maxima window (cells); ~2.5 m at 0.5 m resolution
+  # ITD matching: predicted tree top vs GT tree centroid (horizontal distance)
+  match_distance: 3.0         # metres — max XY distance to count as TP
+
+# Flow A — Geometric Baseline (no trained model)
+# Classifies tree/non-tree using ONLY raw XYZ geometry:
+#   1. Height Above Ground (HAG): local 5th-percentile Z (no class labels used)
+#   2. Local vertical std (kNN k=32) as canopy-structure proxy
+# Thresholds tuned on dev splits via grid search.
+flow_a:
+  hag_threshold:      1.5     # metres — points below this are classified non-tree
+  local_std_k:        32      # kNN neighbours for local vertical std feature
+  local_std_threshold: 0.3    # normalised std threshold to classify as tree
+  # Grid search range (used by flow_a_tune.py)
+  hag_range:       [0.5, 1.0, 1.5, 2.0, 2.5]
+  std_range:       [0.1, 0.2, 0.3, 0.4, 0.5]
+
+# Random Forest (Flow C)
+rf:
+  n_estimators: 200
+  max_depth:    20
+  class_weight: balanced
+  n_jobs:       -1
+  features_k16: true
+  features_k32: true
+
+hardware:
+  device:            cuda
+  mixed_precision:   true
+  cudnn_benchmark:   true
+
+experiment:
+  seed:    42
+  name:    segmentation_forinstance
+  log_dir: results/segmentation_forinstance

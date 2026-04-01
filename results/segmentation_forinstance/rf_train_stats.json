@@ -1,0 +1,67 @@
+{
+  "model_path": "results\\segmentation_forinstance\\rf_model.pkl",
+  "n_train_blocks": 2902,
+  "n_train_pts_per_block": 1024,
+  "n_train_points": 2971648,
+  "n_val_blocks": 511,
+  "n_test_blocks": 1484,
+  "hyperparams": {
+    "n_estimators": 200,
+    "max_depth": 20,
+    "min_samples_leaf": 5,
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "n_jobs": -1
+  },
+  "oob_score": 0.9846055118237422,
+  "val_metrics": {
+    "accuracy": 0.9768,
+    "tree_precision": 0.9609,
+    "tree_recall": 0.9855,
+    "tree_f1": 0.9731,
+    "tree_iou": 0.9475,
+    "non_tree_iou": 0.9601,
+    "mean_iou": 0.9538,
+    "tp": 876142,
+    "fp": 35648,
+    "fn": 12855,
+    "tn": 1168411
+  },
+  "test_metrics": {
+    "accuracy": 0.9581,
+    "tree_precision": 0.9217,
+    "tree_recall": 0.9874,
+    "tree_f1": 0.9534,
+    "tree_iou": 0.911,
+    "non_tree_iou": 0.9266,
+    "mean_iou": 0.9188,
+    "tp": 2607284,
+    "fp": 221409,
+    "fn": 33237,
+    "tn": 3216534
+  },
+  "feature_importances": {
+    "z": 0.21584268432270468,
+    "x": 0.003119999896902896,
+    "y": 0.0024879270446205278,
+    "z_rank_pct": 0.029977576761414878,
+    "z_above_mean": 0.06903120915253794,
+    "z_norm_block": 0.1947012038692696,
+    "dist_center": 0.0024254148627980408,
+    "local_cnt_k16": 0.0,
+    "local_mean_k16": 0.020899984311000624,
+    "local_max_k16": 0.06507106035080083,
+    "local_std_k16": 0.12907005207743902,
+    "local_cnt_k32": 0.0,
+    "local_mean_k32": 0.03484616154660844,
+    "local_max_k32": 0.06284765325922997,
+    "local_std_k32": 0.16967907254467243
+  },
+  "timing": {
+    "feat_extraction_train_s": 14.21,
+    "feat_extraction_val_s": 10.05,
+    "feat_extraction_test_s": 29.24,
+    "training_s": 955.18
+  },
+  "model_size_mb": 539.9
+}

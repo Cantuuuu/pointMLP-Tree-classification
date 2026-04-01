@@ -1,0 +1,830 @@
+{
+  "raster_itd_params": {
+    "cell_size": 0.5,
+    "smooth_sigma": 1.5,
+    "local_max_window": 5,
+    "match_distance": 3.0
+  },
+  "flow_a_hag_threshold": 1.5,
+  "flows": {
+    "A": {
+      "segmentation_aggregate": {
+        "precision": 0.9871,
+        "recall": 0.9902,
+        "f1": 0.9887,
+        "tree_iou": 0.9776,
+        "non_tree_iou": 0.9475,
+        "mean_iou": 0.9625
+      },
+      "itd_aggregate": {
+        "tp": 167,
+        "fp": 74,
+        "fn": 156,
+        "precision": 0.6929,
+        "recall": 0.517,
+        "f1": 0.5922
+      },
+      "per_plot": [
+        {
+          "site": "CULS",
+          "plot": "plot_2_annotated",
+          "n_pts": 2580086,
+          "n_gt_trees": 20,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9933,
+            "f1": 0.9966,
+            "iou": 0.9933,
+            "accuracy": 0.9967
+          },
+          "itd": {
+            "tp": 16,
+            "fp": 13,
+            "fn": 4,
+            "n_pred": 29,
+            "n_gt": 20,
+            "precision": 0.5517,
+            "recall": 0.8,
+            "f1": 0.6531
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_1_annotated",
+          "n_pts": 2904501,
+          "n_gt_trees": 37,
+          "segmentation": {
+            "precision": 0.9998,
+            "recall": 0.9917,
+            "f1": 0.9957,
+            "iou": 0.9915,
+            "accuracy": 0.9931
+          },
+          "itd": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 22,
+            "n_pred": 19,
+            "n_gt": 37,
+            "precision": 0.7895,
+            "recall": 0.4054,
+            "f1": 0.5357
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_17_annotated",
+          "n_pts": 3443707,
+          "n_gt_trees": 30,
+          "segmentation": {
+            "precision": 0.9991,
+            "recall": 0.9922,
+            "f1": 0.9956,
+            "iou": 0.9913,
+            "accuracy": 0.9934
+          },
+          "itd": {
+            "tp": 10,
+            "fp": 5,
+            "fn": 20,
+            "n_pred": 15,
+            "n_gt": 30,
+            "precision": 0.6667,
+            "recall": 0.3333,
+            "f1": 0.4444
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_18_annotated",
+          "n_pts": 3226601,
+          "n_gt_trees": 27,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9916,
+            "f1": 0.9958,
+            "iou": 0.9916,
+            "accuracy": 0.9946
+          },
+          "itd": {
+            "tp": 12,
+            "fp": 3,
+            "fn": 15,
+            "n_pred": 15,
+            "n_gt": 27,
+            "precision": 0.8,
+            "recall": 0.4444,
+            "f1": 0.5714
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_22_annotated",
+          "n_pts": 3253711,
+          "n_gt_trees": 20,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9933,
+            "f1": 0.9966,
+            "iou": 0.9933,
+            "accuracy": 0.9954
+          },
+          "itd": {
+            "tp": 13,
+            "fp": 4,
+            "fn": 7,
+            "n_pred": 17,
+            "n_gt": 20,
+            "precision": 0.7647,
+            "recall": 0.65,
+            "f1": 0.7027
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_23_annotated",
+          "n_pts": 3239361,
+          "n_gt_trees": 28,
+          "segmentation": {
+            "precision": 0.9992,
+            "recall": 0.9913,
+            "f1": 0.9953,
+            "iou": 0.9906,
+            "accuracy": 0.9934
+          },
+          "itd": {
+            "tp": 14,
+            "fp": 1,
+            "fn": 14,
+            "n_pred": 15,
+            "n_gt": 28,
+            "precision": 0.9333,
+            "recall": 0.5,
+            "f1": 0.6512
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_5_annotated",
+          "n_pts": 2934190,
+          "n_gt_trees": 19,
+          "segmentation": {
+            "precision": 0.9997,
+            "recall": 0.9857,
+            "f1": 0.9926,
+            "iou": 0.9853,
+            "accuracy": 0.9909
+          },
+          "itd": {
+            "tp": 12,
+            "fp": 4,
+            "fn": 7,
+            "n_pred": 16,
+            "n_gt": 19,
+            "precision": 0.75,
+            "recall": 0.6316,
+            "f1": 0.6857
+          }
+        },
+        {
+          "site": "RMIT",
+          "plot": "test",
+          "n_pts": 332595,
+          "n_gt_trees": 64,
+          "segmentation": {
+            "precision": 0.7115,
+            "recall": 0.9602,
+            "f1": 0.8174,
+            "iou": 0.6912,
+            "accuracy": 0.8354
+          },
+          "itd": {
+            "tp": 27,
+            "fp": 5,
+            "fn": 37,
+            "n_pred": 32,
+            "n_gt": 64,
+            "precision": 0.8438,
+            "recall": 0.4219,
+            "f1": 0.5625
+          }
+        },
+        {
+          "site": "SCION",
+          "plot": "plot_31_annotated",
+          "n_pts": 2330550,
+          "n_gt_trees": 25,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9891,
+            "f1": 0.9945,
+            "iou": 0.9891,
+            "accuracy": 0.9905
+          },
+          "itd": {
+            "tp": 21,
+            "fp": 8,
+            "fn": 4,
+            "n_pred": 29,
+            "n_gt": 25,
+            "precision": 0.7241,
+            "recall": 0.84,
+            "f1": 0.7778
+          }
+        },
+        {
+          "site": "SCION",
+          "plot": "plot_61_annotated",
+          "n_pts": 2379936,
+          "n_gt_trees": 18,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9865,
+            "f1": 0.9932,
+            "iou": 0.9865,
+            "accuracy": 0.9881
+          },
+          "itd": {
+            "tp": 13,
+            "fp": 7,
+            "fn": 5,
+            "n_pred": 20,
+            "n_gt": 18,
+            "precision": 0.65,
+            "recall": 0.7222,
+            "f1": 0.6842
+          }
+        },
+        {
+          "site": "TUWIEN",
+          "plot": "test",
+          "n_pts": 1594079,
+          "n_gt_trees": 35,
+          "segmentation": {
+            "precision": 0.8275,
+            "recall": 0.9881,
+            "f1": 0.9007,
+            "iou": 0.8194,
+            "accuracy": 0.8659
+          },
+          "itd": {
+            "tp": 14,
+            "fp": 20,
+            "fn": 21,
+            "n_pred": 34,
+            "n_gt": 35,
+            "precision": 0.4118,
+            "recall": 0.4,
+            "f1": 0.4058
+          }
+        }
+      ]
+    },
+    "B": {
+      "segmentation_aggregate": {
+        "precision": 0.9923,
+        "recall": 0.6361,
+        "f1": 0.7753,
+        "tree_iou": 0.633,
+        "non_tree_iou": 0.531,
+        "mean_iou": 0.582
+      },
+      "itd_aggregate": {
+        "tp": 155,
+        "fp": 61,
+        "fn": 168,
+        "precision": 0.7176,
+        "recall": 0.4799,
+        "f1": 0.5751
+      },
+      "per_plot": [
+        {
+          "site": "CULS",
+          "plot": "plot_2_annotated",
+          "n_pts": 2580086,
+          "n_gt_trees": 20,
+          "segmentation": {
+            "precision": 0.9994,
+            "recall": 0.9418,
+            "f1": 0.9697,
+            "iou": 0.9413,
+            "accuracy": 0.9715
+          },
+          "itd": {
+            "tp": 17,
+            "fp": 11,
+            "fn": 3,
+            "n_pred": 28,
+            "n_gt": 20,
+            "precision": 0.6071,
+            "recall": 0.85,
+            "f1": 0.7083
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_1_annotated",
+          "n_pts": 2904501,
+          "n_gt_trees": 37,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.7121,
+            "f1": 0.8318,
+            "iou": 0.7121,
+            "accuracy": 0.767
+          },
+          "itd": {
+            "tp": 18,
+            "fp": 3,
+            "fn": 19,
+            "n_pred": 21,
+            "n_gt": 37,
+            "precision": 0.8571,
+            "recall": 0.4865,
+            "f1": 0.6207
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_17_annotated",
+          "n_pts": 3443707,
+          "n_gt_trees": 30,
+          "segmentation": {
+            "precision": 0.9985,
+            "recall": 0.6533,
+            "f1": 0.7898,
+            "iou": 0.6526,
+            "accuracy": 0.7364
+          },
+          "itd": {
+            "tp": 12,
+            "fp": 3,
+            "fn": 18,
+            "n_pred": 15,
+            "n_gt": 30,
+            "precision": 0.8,
+            "recall": 0.4,
+            "f1": 0.5333
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_18_annotated",
+          "n_pts": 3226601,
+          "n_gt_trees": 27,
+          "segmentation": {
+            "precision": 0.9996,
+            "recall": 0.4442,
+            "f1": 0.6151,
+            "iou": 0.4441,
+            "accuracy": 0.6442
+          },
+          "itd": {
+            "tp": 13,
+            "fp": 2,
+            "fn": 14,
+            "n_pred": 15,
+            "n_gt": 27,
+            "precision": 0.8667,
+            "recall": 0.4815,
+            "f1": 0.619
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_22_annotated",
+          "n_pts": 3253711,
+          "n_gt_trees": 20,
+          "segmentation": {
+            "precision": 0.9995,
+            "recall": 0.4322,
+            "f1": 0.6035,
+            "iou": 0.4321,
+            "accuracy": 0.6099
+          },
+          "itd": {
+            "tp": 10,
+            "fp": 4,
+            "fn": 10,
+            "n_pred": 14,
+            "n_gt": 20,
+            "precision": 0.7143,
+            "recall": 0.5,
+            "f1": 0.5882
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_23_annotated",
+          "n_pts": 3239361,
+          "n_gt_trees": 28,
+          "segmentation": {
+            "precision": 0.9996,
+            "recall": 0.4238,
+            "f1": 0.5952,
+            "iou": 0.4237,
+            "accuracy": 0.597
+          },
+          "itd": {
+            "tp": 13,
+            "fp": 1,
+            "fn": 15,
+            "n_pred": 14,
+            "n_gt": 28,
+            "precision": 0.9286,
+            "recall": 0.4643,
+            "f1": 0.619
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_5_annotated",
+          "n_pts": 2934190,
+          "n_gt_trees": 19,
+          "segmentation": {
+            "precision": 0.9999,
+            "recall": 0.3428,
+            "f1": 0.5106,
+            "iou": 0.3428,
+            "accuracy": 0.5922
+          },
+          "itd": {
+            "tp": 11,
+            "fp": 2,
+            "fn": 8,
+            "n_pred": 13,
+            "n_gt": 19,
+            "precision": 0.8462,
+            "recall": 0.5789,
+            "f1": 0.6875
+          }
+        },
+        {
+          "site": "RMIT",
+          "plot": "test",
+          "n_pts": 332595,
+          "n_gt_trees": 64,
+          "segmentation": {
+            "precision": 0.9454,
+            "recall": 0.2467,
+            "f1": 0.3913,
+            "iou": 0.2433,
+            "accuracy": 0.7056
+          },
+          "itd": {
+            "tp": 18,
+            "fp": 4,
+            "fn": 46,
+            "n_pred": 22,
+            "n_gt": 64,
+            "precision": 0.8182,
+            "recall": 0.2812,
+            "f1": 0.4186
+          }
+        },
+        {
+          "site": "SCION",
+          "plot": "plot_31_annotated",
+          "n_pts": 2330550,
+          "n_gt_trees": 25,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9289,
+            "f1": 0.9631,
+            "iou": 0.9289,
+            "accuracy": 0.9381
+          },
+          "itd": {
+            "tp": 20,
+            "fp": 7,
+            "fn": 5,
+            "n_pred": 27,
+            "n_gt": 25,
+            "precision": 0.7407,
+            "recall": 0.8,
+            "f1": 0.7692
+          }
+        },
+        {
+          "site": "SCION",
+          "plot": "plot_61_annotated",
+          "n_pts": 2379936,
+          "n_gt_trees": 18,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9709,
+            "f1": 0.9852,
+            "iou": 0.9709,
+            "accuracy": 0.9743
+          },
+          "itd": {
+            "tp": 11,
+            "fp": 9,
+            "fn": 7,
+            "n_pred": 20,
+            "n_gt": 18,
+            "precision": 0.55,
+            "recall": 0.6111,
+            "f1": 0.5789
+          }
+        },
+        {
+          "site": "TUWIEN",
+          "plot": "test",
+          "n_pts": 1594079,
+          "n_gt_trees": 35,
+          "segmentation": {
+            "precision": 0.8741,
+            "recall": 0.6485,
+            "f1": 0.7446,
+            "iou": 0.5931,
+            "accuracy": 0.7261
+          },
+          "itd": {
+            "tp": 12,
+            "fp": 15,
+            "fn": 23,
+            "n_pred": 27,
+            "n_gt": 35,
+            "precision": 0.4444,
+            "recall": 0.3429,
+            "f1": 0.3871
+          }
+        }
+      ]
+    },
+    "C": {
+      "segmentation_aggregate": {
+        "precision": 0.9849,
+        "recall": 0.9941,
+        "f1": 0.9895,
+        "tree_iou": 0.9792,
+        "non_tree_iou": 0.9507,
+        "mean_iou": 0.9649
+      },
+      "itd_aggregate": {
+        "tp": 159,
+        "fp": 89,
+        "fn": 164,
+        "precision": 0.6411,
+        "recall": 0.4923,
+        "f1": 0.5569
+      },
+      "per_plot": [
+        {
+          "site": "CULS",
+          "plot": "plot_2_annotated",
+          "n_pts": 2580086,
+          "n_gt_trees": 20,
+          "segmentation": {
+            "precision": 0.9999,
+            "recall": 0.9925,
+            "f1": 0.9962,
+            "iou": 0.9924,
+            "accuracy": 0.9963
+          },
+          "itd": {
+            "tp": 17,
+            "fp": 13,
+            "fn": 3,
+            "n_pred": 30,
+            "n_gt": 20,
+            "precision": 0.5667,
+            "recall": 0.85,
+            "f1": 0.68
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_1_annotated",
+          "n_pts": 2904501,
+          "n_gt_trees": 37,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9937,
+            "f1": 0.9969,
+            "iou": 0.9937,
+            "accuracy": 0.9949
+          },
+          "itd": {
+            "tp": 16,
+            "fp": 5,
+            "fn": 21,
+            "n_pred": 21,
+            "n_gt": 37,
+            "precision": 0.7619,
+            "recall": 0.4324,
+            "f1": 0.5517
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_17_annotated",
+          "n_pts": 3443707,
+          "n_gt_trees": 30,
+          "segmentation": {
+            "precision": 0.999,
+            "recall": 0.9953,
+            "f1": 0.9971,
+            "iou": 0.9943,
+            "accuracy": 0.9957
+          },
+          "itd": {
+            "tp": 11,
+            "fp": 6,
+            "fn": 19,
+            "n_pred": 17,
+            "n_gt": 30,
+            "precision": 0.6471,
+            "recall": 0.3667,
+            "f1": 0.4681
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_18_annotated",
+          "n_pts": 3226601,
+          "n_gt_trees": 27,
+          "segmentation": {
+            "precision": 0.9996,
+            "recall": 0.9937,
+            "f1": 0.9967,
+            "iou": 0.9933,
+            "accuracy": 0.9957
+          },
+          "itd": {
+            "tp": 12,
+            "fp": 3,
+            "fn": 15,
+            "n_pred": 15,
+            "n_gt": 27,
+            "precision": 0.8,
+            "recall": 0.4444,
+            "f1": 0.5714
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_22_annotated",
+          "n_pts": 3253711,
+          "n_gt_trees": 20,
+          "segmentation": {
+            "precision": 0.9938,
+            "recall": 0.9952,
+            "f1": 0.9945,
+            "iou": 0.9891,
+            "accuracy": 0.9925
+          },
+          "itd": {
+            "tp": 11,
+            "fp": 6,
+            "fn": 9,
+            "n_pred": 17,
+            "n_gt": 20,
+            "precision": 0.6471,
+            "recall": 0.55,
+            "f1": 0.5946
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_23_annotated",
+          "n_pts": 3239361,
+          "n_gt_trees": 28,
+          "segmentation": {
+            "precision": 0.9831,
+            "recall": 0.9928,
+            "f1": 0.9879,
+            "iou": 0.9761,
+            "accuracy": 0.983
+          },
+          "itd": {
+            "tp": 13,
+            "fp": 2,
+            "fn": 15,
+            "n_pred": 15,
+            "n_gt": 28,
+            "precision": 0.8667,
+            "recall": 0.4643,
+            "f1": 0.6047
+          }
+        },
+        {
+          "site": "NIBIO",
+          "plot": "plot_5_annotated",
+          "n_pts": 2934190,
+          "n_gt_trees": 19,
+          "segmentation": {
+            "precision": 0.9979,
+            "recall": 0.9917,
+            "f1": 0.9948,
+            "iou": 0.9896,
+            "accuracy": 0.9936
+          },
+          "itd": {
+            "tp": 8,
+            "fp": 6,
+            "fn": 11,
+            "n_pred": 14,
+            "n_gt": 19,
+            "precision": 0.5714,
+            "recall": 0.4211,
+            "f1": 0.4848
+          }
+        },
+        {
+          "site": "RMIT",
+          "plot": "test",
+          "n_pts": 332595,
+          "n_gt_trees": 64,
+          "segmentation": {
+            "precision": 0.7108,
+            "recall": 0.9621,
+            "f1": 0.8176,
+            "iou": 0.6915,
+            "accuracy": 0.8354
+          },
+          "itd": {
+            "tp": 26,
+            "fp": 5,
+            "fn": 38,
+            "n_pred": 31,
+            "n_gt": 64,
+            "precision": 0.8387,
+            "recall": 0.4062,
+            "f1": 0.5474
+          }
+        },
+        {
+          "site": "SCION",
+          "plot": "plot_31_annotated",
+          "n_pts": 2330550,
+          "n_gt_trees": 25,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.9958,
+            "f1": 0.9979,
+            "iou": 0.9958,
+            "accuracy": 0.9964
+          },
+          "itd": {
+            "tp": 20,
+            "fp": 7,
+            "fn": 5,
+            "n_pred": 27,
+            "n_gt": 25,
+            "precision": 0.7407,
+            "recall": 0.8,
+            "f1": 0.7692
+          }
+        },
+        {
+          "site": "SCION",
+          "plot": "plot_61_annotated",
+          "n_pts": 2379936,
+          "n_gt_trees": 18,
+          "segmentation": {
+            "precision": 1.0,
+            "recall": 0.998,
+            "f1": 0.999,
+            "iou": 0.998,
+            "accuracy": 0.9982
+          },
+          "itd": {
+            "tp": 10,
+            "fp": 11,
+            "fn": 8,
+            "n_pred": 21,
+            "n_gt": 18,
+            "precision": 0.4762,
+            "recall": 0.5556,
+            "f1": 0.5128
+          }
+        },
+        {
+          "site": "TUWIEN",
+          "plot": "test",
+          "n_pts": 1594079,
+          "n_gt_trees": 35,
+          "segmentation": {
+            "precision": 0.8346,
+            "recall": 0.9924,
+            "f1": 0.9067,
+            "iou": 0.8293,
+            "accuracy": 0.8743
+          },
+          "itd": {
+            "tp": 15,
+            "fp": 25,
+            "fn": 20,
+            "n_pred": 40,
+            "n_gt": 35,
+            "precision": 0.375,
+            "recall": 0.4286,
+            "f1": 0.4
+          }
+        }
+      ]
+    }
+  }
+}
